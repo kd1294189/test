@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#game-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#draw-card-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#draw-card-button:hover {
+    background-color: #0056b3;
+}
+
+#card-display {
+    margin-top: 20px;
+    font-size: 24px;
+}
