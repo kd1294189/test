@@ -10,22 +10,21 @@ document.addEventListener('DOMContentLoaded', function() {
         if (cards.length === 0) {
             cardDisplay.textContent = 'No more cards in the deck!';
         } else {
-            if (drawnCards.length < 5) {
-                const cardsToDraw = Math.min(5 - drawnCards.length, cards.length);
-                for (let i = 0; i < cardsToDraw; i++) {
+            if (drawnCards.length === 0) {
+                // Draw 5 cards on first click
+                for (let i = 0; i < 5; i++) {
                     const randomIndex = Math.floor(Math.random() * cards.length);
                     const randomCard = cards[randomIndex];
                     cards.splice(randomIndex, 1); // Remove drawn card from deck
                     drawnCards.push(randomCard); // Add drawn card to drawnCards array
                 }
-                cardDisplay.textContent = 'You drew: ' + drawnCards.join(', ');
                 drawnCardsDisplay.textContent = 'Drawn cards: ' + drawnCards.join(', ');
             } else {
+                // Draw 1 card on subsequent clicks
                 const randomIndex = Math.floor(Math.random() * cards.length);
                 const randomCard = cards[randomIndex];
                 cards.splice(randomIndex, 1); // Remove drawn card from deck
                 drawnCards.push(randomCard); // Add drawn card to drawnCards array
-                cardDisplay.textContent = 'You drew: ' + randomCard;
                 drawnCardsDisplay.textContent = 'Drawn cards: ' + drawnCards.join(', ');
             }
         }
