@@ -18,9 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //  直前カード
     let last = "";
+    let last_cnt = "";
 
     //  取得食料
-    cnt = 0
+    let cnt = 0
+    
+
+    //  前回食糧記録
+    let out_cnt = ""
     
     drawCardButton.addEventListener('click', function() {
 
@@ -40,9 +45,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
 
+            /*
+            else if(last == randomCard[0] + randomCard[1] + randomCard[2]){
+                cardDisplay.textContent = '食料が溢れました！';
+                cnt -= last_cnt;
+
+            }*/
+
             else if(cnt == 6){
                 
-                cardDisplay.textContent = '食料がたまりました！ゲームクリア';
+                cardDisplay.textContent = '食料がたまりました！クリア';
                 process.exit();
 
             }
@@ -51,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 cards.splice(randomIndex, 1); // デッキから引いたカードを削除
                 drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
+
+            
                 cardDisplay.textContent = '引いたカード: ' + randomCard;
                 //drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
                 drawnCardsDisplay.textContent = '食料数: ' + String(cnt);
@@ -61,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function renderHandButtons() {
+        /*
         handContainer.innerHTML = '';
         for (let i = 0; i < drawnCards.length; i++) {
 
@@ -75,5 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             handContainer.appendChild(cardButton);
         }
+        */
     }
 });
