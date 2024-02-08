@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             cnt += parseInt( randomCard[4]);
 
-            if(cnt > 6){
+            if(cnt > 10){
 
                 cardDisplay.textContent = '見つけた食料:' + randomCard + ' 食料が溢れました！ゲームオーバー';
                 drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
 
-            else if(cnt == 6){
+            else if(cnt == 10){
                 
                 cardDisplay.textContent = '見つけた食料:　' + randomCard + ' 食料がたまりました！クリア';
                 drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
