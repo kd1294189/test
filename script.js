@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cards.splice(randomIndex, 1); // デッキから引いたカードを削除
             drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
             cardDisplay.textContent = '引いたカード: ' + randomCard;
-            drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
+            //drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
             renderHandButtons();
         }
     });
