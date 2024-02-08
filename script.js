@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
 
+            else if(cnt == 6){
+                
+                cardDisplay.textContent = '食料がたまりました！ゲームクリア';
+                process.exit();
+
+            }
+
             else{
 
                 cards.splice(randomIndex, 1); // デッキから引いたカードを削除
