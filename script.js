@@ -34,10 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
             process.exit();
 
         } else {
+
             const randomIndex = Math.floor(Math.random() * cards.length);
             const randomCard = cards[randomIndex];
 
             cnt += parseInt( randomCard[4]);
+
             if(cnt > 6){
 
                 cardDisplay.textContent = '見つけた食料:' + randomCard + '食料が溢れました！ゲームオーバー';
@@ -45,16 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
 
-            /*
-            else if(last == randomCard[0] + randomCard[1] + randomCard[2]){
-                cardDisplay.textContent = '食料が溢れました！';
-                cnt -= last_cnt;
 
-            }*/
-
-            else if(cnt == 6){
+            if(cnt == 6){
                 
                 cardDisplay.textContent = '見つけた食料: ' + randomCard + '食料がたまりました！クリア';
+                drawnCardsDisplay.textContent = '食料数: ' + String(cnt);
                 process.exit();
 
             }
