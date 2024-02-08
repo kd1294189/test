@@ -13,20 +13,43 @@ document.addEventListener('DOMContentLoaded', function() {
     'トマト×1', 'トマト×2', 'トマト×3', 'トマト×4', 'トマト×5', 'トマト×6',
     'キノコ×1', 'キノコ×2', 'キノコ×3', 'キノコ×4', 'キノコ×5', 'キノコ×6'];
 
+    //使用カード
     let drawnCards = [];
+
+    //  直前カード
+    let last = "";
+
+    //  取得食料
+    cnt = 0
     
     drawCardButton.addEventListener('click', function() {
+
         if (cards.length === 0) {
             cardDisplay.textContent = 'カードがありません！ゲームオーバー';
+            process.exit();
+
         } else {
             const randomIndex = Math.floor(Math.random() * cards.length);
             const randomCard = cards[randomIndex];
-            cards.splice(randomIndex, 1); // デッキから引いたカードを削除
-            drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
-            cardDisplay.textContent = '引いたカード: ' + randomCard;
-            //drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
-            drawnCardsDisplay.textContent = '引かれたカード:'
-            renderHandButtons();
+
+            cnt += parseInt( randomCard[4]);
+            if(cnt > 6){
+
+                cardDisplay.textContent = '食料が溢れました！ゲームオーバー';
+                process.exit();
+
+            }
+
+            else{
+
+                cards.splice(randomIndex, 1); // デッキから引いたカードを削除
+                drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
+                cardDisplay.textContent = '引いたカード: ' + randomCard;
+                //drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
+                drawnCardsDisplay.textContent = '食料数: ' + String(cnt);
+                //drawnCardsDisplay.textContent = '引かれたカード:'
+                renderHandButtons();
+            }
         }
     });
 
