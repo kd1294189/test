@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const cardButton = document.createElement('button');
             cardButton.classList.add('hand-button');
             cardButton.textContent = drawnCards[i];
+            cardButton.addEventListener('click', function() {
+                // ボタンを削除し、カードを札山に戻す
+                cards.push(drawnCards[i]);
+                drawnCards.splice(i, 1);
+                renderHandButtons();
+            });
             handContainer.appendChild(cardButton);
         }
     }
