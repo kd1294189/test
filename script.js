@@ -49,16 +49,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if(cnt > 20){
 
+                cards.splice(randomIndex, 1); // デッキから引いたカードを削除
+                drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
+
                 cardDisplay.textContent = '見つけた食料:' + randomCard + ' 食料が溢れました！ゲームオーバー';
                 drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
+
+                renderHandButtons();
 
             }
 
 
             else if(cnt == 20){
+
+                cards.splice(randomIndex, 1); // デッキから引いたカードを削除
+                drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
                 
                 cardDisplay.textContent = '見つけた食料:　' + randomCard + ' 食料がたまりました！クリア';
                 drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
+
+                renderHandButtons();
                 
             }
 
