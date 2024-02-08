@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const drawnCardsDisplay = document.getElementById('drawn-cards');
     const handContainer = document.getElementById('hand');
     
-    //let cards = ['エース', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'ジャック', 'クイーン', 'キング'];
 
     let cards = ['リンゴ×1','リンゴ×2','リンゴ×3', 
     'スイカ×1', 'スイカ×2', 'スイカ×3',  
@@ -18,14 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //  直前カード
     let last = "";
-    let last_cnt = "";
+    let last_cnt = 0;
 
     //  取得食料
     let cnt = 0
     
 
-    //  前回食糧記録
-    let out_cnt = ""
+  
     
     drawCardButton.addEventListener('click', function() {
 
@@ -37,6 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const randomIndex = Math.floor(Math.random() * cards.length);
             const randomCard = cards[randomIndex];
+
+            /*
+            if(last == randomCard){
+
+                cardDisplay.textContent = '見つけた食料:' + randomCard + ' 食料没収！！';
+
+                cnt -= last_cnt;
+            }*/
+
 
             cnt += parseInt( randomCard[4]);
 
@@ -61,12 +68,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
 
                 cardDisplay.textContent = '見つけた食料:　' + randomCard;
-                //drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
                 drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
-                //drawnCardsDisplay.textContent = '引かれたカード:'
+                
+
+                /*
+                last = randomCard;
+                last_cnt = parseInt( randomCard[4]);
+                */
 
                 renderHandButtons();
-                
+
             }
         }
     });
