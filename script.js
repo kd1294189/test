@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const drawCardButton = document.getElementById('draw-card-button');
     const cardDisplay = document.getElementById('card-display');
-    const drawnCardsDisplay = document.getElementById('drawn-cards');
     const drawnCardsContainer = document.getElementById('drawn-cards-container');
     
     let cards = ['エース', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'ジャック', 'クイーン', 'キング'];
@@ -22,17 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 引かれたカードを表示する関数
     function displayDrawnCards() {
-        drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
         drawnCardsContainer.innerHTML = ''; // 札山の表示をクリア
         drawnCards.forEach(function(card, index) {
-            const cardElement = document.createElement('div');
-            cardElement.textContent = card;
-            cardElement.classList.add('drawn-card');
-            cardElement.dataset.index = index; // カードのインデックスを data 属性に設定
-            cardElement.addEventListener('click', function() {
+            const cardButton = document.createElement('button');
+            cardButton.textContent = card;
+            cardButton.classList.add('drawn-card-button');
+            cardButton.addEventListener('click', function() {
                 returnCardToDeck(index); // クリックされたカードを札山に戻す
             });
-            drawnCardsContainer.appendChild(cardElement);
+            drawnCardsContainer.appendChild(cardButton);
         });
     }
 
