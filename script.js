@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             else if(cnt == 6){
                 
-                cardDisplay.textContent = '見つけた食料: ' + randomCard + ' 食料がたまりました！クリア';
-                drawnCardsDisplay.textContent = '食料数: ' + String(cnt);
+                cardDisplay.textContent = '見つけた食料:　' + randomCard + ' 食料がたまりました！クリア';
+                drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
 
                 while (true){
                     //a
@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
 
             
-                cardDisplay.textContent = '見つけた食料: ' + randomCard;
+                cardDisplay.textContent = '見つけた食料:　' + randomCard;
                 //drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
-                drawnCardsDisplay.textContent = '食料数: ' + String(cnt);
+                drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
                 //drawnCardsDisplay.textContent = '引かれたカード:'
                 renderHandButtons();
             }
