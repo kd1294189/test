@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             cnt += parseInt( randomCard[4]);
 
-            if(cnt > 10){
+            if(cnt > 20){
 
                
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
 
-            else if(cnt == 10){
+            else if(cnt == 20){
                 
 
                 //while (true){
