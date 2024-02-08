@@ -44,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 cardDisplay.textContent = '見つけた食料:' + randomCard + ' 食料が溢れました！ゲームオーバー';
 
-                while (true){}
+                while (true){
+                    //a
+                }
                 
 
             }
@@ -55,7 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 cardDisplay.textContent = '見つけた食料: ' + randomCard + ' 食料がたまりました！クリア';
                 drawnCardsDisplay.textContent = '食料数: ' + String(cnt);
 
-                while (true){}
+                while (true){
+                    //a
+                }
 
             }
 
@@ -83,14 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
             cardButton.classList.add('hand-button');
             cardButton.textContent = drawnCards[i];
 
-            /*
+            
             cardButton.addEventListener('click', function() {
                 // ボタンを削除し、カードを札山に戻す
-                cards.push(drawnCards[i]);
-                drawnCards.splice(i, 1);
-                renderHandButtons();
+                //cards.push(drawnCards[i]);
+                //drawnCards.splice(i, 1);
+                //renderHandButtons();
             });
-            */
+            
             handContainer.appendChild(cardButton);
         }
         
