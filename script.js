@@ -23,12 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let cnt = 0
     
 
-  
     
     drawCardButton.addEventListener('click', function() {
 
         if (cards.length === 0) {
-            cardDisplay.textContent = '食料はもうありませんでした…ゲームオーバー';
+            cardDisplay.textContent = '探したが食料はもうありませんでした…ゲームオーバー';
             process.exit();
 
         } else {
@@ -52,41 +51,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if(cnt > 20){
 
-                
-
                 cardDisplay.textContent = '見つけた食料:' + randomCard + ' 食料が溢れました！ゲームオーバー';
                 drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
-
-            
 
             }
 
 
             else if(cnt == 20){
 
-                
-                
                 cardDisplay.textContent = '見つけた食料:　' + randomCard + ' 食料がたまりました！クリア';
                 drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
-
-                
                 
             }
 
             else{
 
-                
-
                 cardDisplay.textContent = '見つけた食料:　' + randomCard;
                 drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
                 
-
                 /*
                 last = randomCard;
                 last_cnt = parseInt( randomCard[4]);
                 */
-
-               
 
             }
 
