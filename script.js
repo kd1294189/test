@@ -18,15 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     cards.splice(randomIndex, 1); // Remove drawn card from deck
                     drawnCards.push(randomCard); // Add drawn card to drawnCards array
                 }
-                drawnCardsDisplay.textContent = 'Drawn cards: ' + drawnCards.join(', ');
             } else {
                 // Draw 1 card on subsequent clicks
                 const randomIndex = Math.floor(Math.random() * cards.length);
                 const randomCard = cards[randomIndex];
                 cards.splice(randomIndex, 1); // Remove drawn card from deck
                 drawnCards.push(randomCard); // Add drawn card to drawnCards array
-                drawnCardsDisplay.textContent = 'Drawn cards: ' + drawnCards.join(', ');
             }
+            
+            // Update drawn cards display
+            drawnCardsDisplay.textContent = 'Drawn cards: ' + drawnCards.join(', ');
         }
     });
 });
