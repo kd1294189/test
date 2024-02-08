@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if(cnt > 6){
 
                 cardDisplay.textContent = '見つけた食料:' + randomCard + ' 食料が溢れました！ゲームオーバー';
+                drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
 
                 while (true){
                     //a
