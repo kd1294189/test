@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             drawnCards.push(randomCard); // 引かれたカードを drawnCards 配列に追加
             cardDisplay.textContent = '引いたカード: ' + randomCard;
             //drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
+            drawnCardsDisplay.textContent = '引かれたカード:'
             renderHandButtons();
         }
     });
