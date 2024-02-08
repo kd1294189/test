@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const randomCard = cards[randomIndex];
             cards.splice(randomIndex, 1); // Remove drawn card from deck
             drawnCards.push(randomCard); // Add drawn card to drawnCards array
-            cardDisplay.textContent = 'You drew: ' + randomCard;
-            drawnCardsDisplay.textContent = 'Drawn cards: ' + drawnCards.join(', ');
+            cardDisplay.textContent = '引いたカード: ' + randomCard;
+            drawnCardsDisplay.textContent = '引かれたカード: ' + drawnCards.join(', ');
         }
     });
 });
