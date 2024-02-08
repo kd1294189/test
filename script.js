@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                
 
-                while (true){
+                //while (true){
                     cardDisplay.textContent = '見つけた食料:' + randomCard + ' 食料が溢れました！ゲームオーバー';
                     drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
-                }
+                //}
                 
 
             }
@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
             else if(cnt == 10){
                 
 
-                while (true){
+                //while (true){
                     cardDisplay.textContent = '見つけた食料:　' + randomCard + ' 食料がたまりました！クリア';
                     drawnCardsDisplay.textContent = '食料数:　' + String(cnt);
-                }
+                //}
 
             }
 
